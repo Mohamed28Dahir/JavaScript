@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 11 - Local Storage</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+        .note {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+            position: relative;
+        }
+        .note-form {
+            margin-bottom: 2rem;
+        }
+        .note-form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        .note-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            color: white;
+        }
+        .btn-primary {
+            background-color: #3498db;
+        }
+        .btn-danger {
+            background-color: #e74c3c;
+        }
+        .btn-warning {
+            background-color: #f39c12;
+        }
+        .timestamp {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        .storage-info {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Persistent Notes App</h1>
+        
+        <div class="storage-info">
+            <h3>Local Storage Info</h3>
+            <p>Used Space: <span id="usedSpace">0 KB</span></p>
+            <p>Available Space: <span id="availableSpace">5 MB</span></p>
+            <button class="btn btn-danger" onclick="clearAllNotes()">Clear All Notes</button>
+        </div>
+
+        <form id="noteForm" class="note-form">
+            <textarea 
+                id="noteContent" 
+                rows="4" 
+                placeholder="Write your note here..."
+                required
+            ></textarea>
+            <button type="submit" class="btn btn-primary">Save Note</button>
+        </form>
+
+        <div id="notesList"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 12 - Web APIs</title>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+        .search-form {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .search-form input {
+            flex: 1;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .search-form button {
+            padding: 0.5rem 1rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            display: none;
+        }
+        .error {
+            color: #e74c3c;
+            padding: 1rem;
+            background-color: #ffebee;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+        .book {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+        .book h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .book-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .book-cover {
+            max-width: 150px;
+            height: auto;
+        }
+        .book-details {
+            flex: 1;
+        }
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border-radius: 3px;
+            font-size: 0.875rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Google Books API Explorer</h1>
+        
+        <form id="searchForm" class="search-form">
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Search for books..."
+                required
+            >
+            <button type="submit">Search</button>
+        </form>
+
+        <div id="error" class="error"></div>
+        <div id="loading" class="loading">Searching for books...</div>
+        <div id="results"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

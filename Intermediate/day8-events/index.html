@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 8 - Event Delegation</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+        .dynamic-list {
+            list-style: none;
+            padding: 0;
+        }
+        .list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+        }
+        .remove-btn {
+            background-color: #ff4444;
+            color: white;
+            border: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .add-form {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Event Delegation Demo</h1>
+        <form class="add-form" id="addForm">
+            <input type="text" id="itemInput" placeholder="Enter item name" required>
+            <button type="submit">Add Item</button>
+        </form>
+        <ul class="dynamic-list" id="itemList">
+            <li class="list-item">
+                Item 1
+                <button class="remove-btn">Remove</button>
+            </li>
+            <li class="list-item">
+                Item 2
+                <button class="remove-btn">Remove</button>
+            </li>
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

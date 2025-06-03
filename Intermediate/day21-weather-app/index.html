@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Dashboard</h1>
+        
+        <div class="search-container">
+            <input type="text" id="city-input" placeholder="Enter city name...">
+            <button onclick="searchWeather()">Search</button>
+        </div>
+
+        <div class="recent-searches" id="recent-searches">
+            <h3>Recent Searches</h3>
+            <div class="recent-list" id="recent-list"></div>
+        </div>
+
+        <div class="weather-container">
+            <div id="loading" class="loading" style="display: none;">
+                <div class="loader"></div>
+                <p>Fetching weather data...</p>
+            </div>
+
+            <div id="weather-info" class="weather-info" style="display: none;">
+                <h2 id="city-name"></h2>
+                <div class="weather-details">
+                    <div class="main-weather">
+                        <div class="temperature">
+                            <span id="temperature"></span>
+                            <span class="unit">°C</span>
+                        </div>
+                        <div class="weather-icon">
+                            <img id="weather-icon" src="" alt="Weather icon">
+                        </div>
+                    </div>
+                    <div class="description" id="weather-description"></div>
+                    <div class="additional-info">
+                        <div class="info-item">
+                            <span class="label">Humidity</span>
+                            <span id="humidity"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Wind Speed</span>
+                            <span id="wind-speed"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Pressure</span>
+                            <span id="pressure"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Feels Like</span>
+                            <span id="feels-like"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="error-message" class="error-message" style="display: none;">
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 

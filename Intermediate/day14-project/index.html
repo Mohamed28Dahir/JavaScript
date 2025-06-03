@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 14 - Todo Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Advanced Todo Application</h1>
+            <div class="todo-stats">
+                <span id="totalTodos">Total: 0</span>
+                <span id="completedTodos">Completed: 0</span>
+            </div>
+        </header>
+
+        <main>
+            <section class="todo-form-section">
+                <h2>Add New Todo</h2>
+                <form id="todoForm">
+                    <div class="form-group">
+                        <label for="todoTitle">Title:</label>
+                        <input type="text" id="todoTitle" placeholder="What needs to be done?" required>
+                        <span class="error-message" id="titleError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="todoDescription">Description:</label>
+                        <textarea id="todoDescription" rows="3" placeholder="Add details (optional)"></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="todoDueDate">Due Date:</label>
+                            <input type="date" id="todoDueDate">
+                            <span class="error-message" id="dateError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="todoPriority">Priority:</label>
+                            <select id="todoPriority">
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Add Todo</button>
+                </form>
+            </section>
+
+            <section class="todo-list-section">
+                <div class="todo-filters">
+                    <div class="filter-group">
+                        <button class="btn filter-btn active" data-filter="all">All</button>
+                        <button class="btn filter-btn" data-filter="active">Active</button>
+                        <button class="btn filter-btn" data-filter="completed">Completed</button>
+                    </div>
+                    <div class="sort-group">
+                        <select id="sortBy">
+                            <option value="date">Sort by Date</option>
+                            <option value="priority">Sort by Priority</option>
+                            <option value="title">Sort by Title</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="todoList" class="todo-list">
+                    <!-- Todo items will be inserted here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="Todo.js"></script>
+    <script src="TodoManager.js"></script>
+    <script src="app.js"></script>
+</body>
+</html> 

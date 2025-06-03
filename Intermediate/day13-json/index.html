@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 13 - JSON Data</title>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+        .data-section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .json-display {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            margin: 1rem 0;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .error {
+            color: #e74c3c;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JSON Data Manipulation</h1>
+        
+        <div class="data-section">
+            <h2>Create User Data</h2>
+            <form id="userForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" required>
+                </div>
+                <div class="form-group">
+                    <label for="role">Role:</label>
+                    <select id="role">
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                        <option value="guest">Guest</option>
+                    </select>
+                </div>
+                <button type="submit">Create User</button>
+            </form>
+        </div>
+
+        <div class="data-section">
+            <h2>JSON Output</h2>
+            <div id="jsonOutput" class="json-display"></div>
+            <button onclick="copyToClipboard()">Copy JSON</button>
+        </div>
+
+        <div class="data-section">
+            <h2>Parse JSON</h2>
+            <div class="form-group">
+                <label for="jsonInput">Paste JSON here:</label>
+                <textarea id="jsonInput" rows="5" style="width: 100%; margin-bottom: 1rem;"></textarea>
+                <button onclick="parseJSON()">Parse JSON</button>
+            </div>
+            <div id="parseResult" class="json-display"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
