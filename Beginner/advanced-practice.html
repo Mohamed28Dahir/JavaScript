@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Advanced Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        .highlight {
+            background-color: #fff3cd;
+        }
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+        button {
+            padding: 8px 16px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        input {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .quiz-container {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .quiz-option {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .quiz-option:hover {
+            background-color: #e9ecef;
+        }
+        .selected {
+            background-color: #cce5ff;
+        }
+        .correct {
+            background-color: #d4edda;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+        }
+        .flashcard {
+            perspective: 1000px;
+            width: 300px;
+            height: 200px;
+            margin: 20px auto;
+        }
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: white;
+        }
+        .flashcard-back {
+            transform: rotateY(180deg);
+            background-color: #f8f9fa;
+        }
+        #clock {
+            font-size: 48px;
+            text-align: center;
+            margin: 20px 0;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <!-- Day 22: Arrays + Loops Combined -->
+    <div id="day22" class="section">
+        <h2>Arrays + Loops Practice</h2>
+        <div id="productList"></div>
+        <div id="pagination"></div>
+    </div>
+
+    <!-- Day 23: More Array Methods -->
+    <div id="day23" class="section">
+        <h2>Array Methods Practice</h2>
+        <div id="userList"></div>
+        <div>
+            <input type="text" id="searchInput" placeholder="Search users...">
+            <button id="sortByName">Sort by Name</button>
+            <button id="filterAdults">Show Adults Only</button>
+        </div>
+    </div>
+
+    <!-- Day 24: Function Review -->
+    <div id="day24" class="section">
+        <h2>Function Practice</h2>
+        <div id="calculator">
+            <input type="number" id="num1" placeholder="Number 1">
+            <input type="number" id="num2" placeholder="Number 2">
+            <div id="operations">
+                <button id="add">Add</button>
+                <button id="subtract">Subtract</button>
+                <button id="multiply">Multiply</button>
+                <button id="divide">Divide</button>
+            </div>
+            <p id="result">Result: </p>
+        </div>
+    </div>
+
+    <!-- Day 25: Debugging -->
+    <div id="day25" class="section">
+        <h2>Debugging Practice</h2>
+        <div id="buggyFeatures">
+            <button id="buggyButton1">Buggy Counter</button>
+            <button id="buggyButton2">Buggy Timer</button>
+            <button id="buggyButton3">Buggy Calculator</button>
+            <div id="debugOutput"></div>
+        </div>
+    </div>
+
+    <!-- Day 26: Best Practices -->
+    <div id="day26" class="section">
+        <h2>Code Quality Practice</h2>
+        <div id="codeExamples">
+            <div class="code-block">
+                <h3>Original Code</h3>
+                <pre id="originalCode"></pre>
+            </div>
+            <div class="code-block">
+                <h3>Refactored Code</h3>
+                <pre id="refactoredCode"></pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Day 27: Review Flashcards -->
+    <div id="day27" class="section">
+        <h2>JavaScript Flashcards</h2>
+        <div id="flashcardContainer"></div>
+        <div id="flashcardControls">
+            <button id="prevCard">Previous</button>
+            <button id="nextCard">Next</button>
+        </div>
+    </div>
+
+    <!-- Day 28: Final Project (Quiz App) -->
+    <div id="day28" class="section">
+        <h2>JavaScript Quiz App</h2>
+        <div id="quizContainer" class="quiz-container">
+            <div id="quizProgress"></div>
+            <div id="quizQuestion"></div>
+            <div id="quizOptions"></div>
+            <div id="quizControls">
+                <button id="submitAnswer" style="display: none;">Submit Answer</button>
+                <button id="nextQuestion" style="display: none;">Next Question</button>
+            </div>
+            <div id="quizResults" style="display: none;"></div>
+        </div>
+    </div>
+
+    <!-- Link JavaScript files -->
+    <script src="day22-arrays-loops.js"></script>
+    <script src="day23-array-methods.js"></script>
+    <script src="day24-functions.js"></script>
+    <script src="day25-debugging.js"></script>
+    <script src="day26-best-practices.js"></script>
+    <script src="day27-review.js"></script>
+    <script src="day28-quiz-project.js"></script>
+</body>
+</html> 

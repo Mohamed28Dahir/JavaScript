@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .hidden {
+            display: none;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+        button {
+            padding: 8px 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        input, select {
+            padding: 5px;
+            margin: 5px;
+        }
+        #todoList {
+            list-style-type: none;
+            padding: 0;
+        }
+        .todo-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #f9f9f9;
+            border-radius: 3px;
+        }
+        .completed {
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <!-- Day 15: DOM Introduction -->
+    <div id="day15" class="section">
+        <h2>DOM Introduction</h2>
+        <p id="intro-text">This is a paragraph that we'll modify.</p>
+        <div class="sample-class">A div with a class</div>
+        <button id="changeTextBtn">Change Text</button>
+    </div>
+
+    <!-- Day 16: Events -->
+    <div id="day16" class="section">
+        <h2>Events</h2>
+        <button id="colorButton">Change My Color</button>
+        <div id="mouseArea" style="width: 200px; height: 100px; background-color: lightgray; margin: 10px;">
+            Hover over me!
+        </div>
+        <p id="eventText">Click count: 0</p>
+    </div>
+
+    <!-- Day 17: DOM Tree & Traversal -->
+    <div id="day17" class="section">
+        <h2>DOM Tree & Traversal</h2>
+        <div id="family">
+            <div id="parent">
+                Parent
+                <div id="child1" class="child">Child 1</div>
+                <div id="child2" class="child">Child 2</div>
+                <div id="child3" class="child">Child 3</div>
+            </div>
+        </div>
+        <button id="highlightParent">Highlight Parent</button>
+        <button id="highlightChildren">Highlight Children</button>
+    </div>
+
+    <!-- Day 18: Forms & Inputs -->
+    <div id="day18" class="section">
+        <h2>Forms & Inputs</h2>
+        <form id="loginForm">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p id="loginMessage"></p>
+    </div>
+
+    <!-- Day 19: Style Manipulation -->
+    <div id="day19" class="section">
+        <h2>Style Manipulation</h2>
+        <div id="styleBox" style="width: 100px; height: 100px; background-color: blue;">
+            Style Box
+        </div>
+        <button id="toggleButton">Toggle Visibility</button>
+        <button id="changeStyleButton">Change Style</button>
+    </div>
+
+    <!-- Day 20: Review DOM Concepts -->
+    <div id="day20" class="section">
+        <h2>Interactive Form</h2>
+        <form id="registrationForm">
+            <div>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required min="18">
+            </div>
+            <button type="submit">Register</button>
+        </form>
+        <p id="validationMessage"></p>
+    </div>
+
+    <!-- Day 21: Mini Project - Todo List -->
+    <div id="day21" class="section">
+        <h2>Todo List</h2>
+        <div id="todoApp">
+            <form id="todoForm">
+                <input type="text" id="todoInput" placeholder="Enter a new task">
+                <button type="submit">Add Task</button>
+            </form>
+            <ul id="todoList"></ul>
+        </div>
+    </div>
+
+    <!-- Link JavaScript files -->
+    <script src="day15-dom-intro.js"></script>
+    <script src="day16-events.js"></script>
+    <script src="day17-dom-traversal.js"></script>
+    <script src="day18-forms.js"></script>
+    <script src="day19-styles.js"></script>
+    <script src="day20-review.js"></script>
+    <script src="day21-todo-project.js"></script>
+</body>
+</html> 
