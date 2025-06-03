@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced News Reader</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <header>
+            <h1>Advanced News Reader</h1>
+            <div class="controls">
+                <button id="refreshBtn">Refresh</button>
+                <button id="syncBtn">Sync</button>
+                <div class="connection-status" id="connectionStatus">Online</div>
+            </div>
+        </header>
+
+        <main>
+            <div class="categories" id="categories">
+                <!-- Categories will be populated dynamically -->
+            </div>
+
+            <div class="articles" id="articles">
+                <!-- Articles will be populated dynamically -->
+            </div>
+
+            <div class="loading-indicator" id="loadingIndicator">
+                <div class="spinner"></div>
+                <div class="progress-bar">
+                    <div class="progress" id="loadingProgress"></div>
+                </div>
+            </div>
+        </main>
+
+        <div class="offline-banner" id="offlineBanner">
+            You are offline. Some features may be limited.
+        </div>
+    </div>
+
+    <template id="articleTemplate">
+        <article class="article">
+            <div class="article-image">
+                <img src="" alt="">
+                <div class="save-indicator"></div>
+            </div>
+            <div class="article-content">
+                <h2 class="article-title"></h2>
+                <p class="article-summary"></p>
+                <div class="article-meta">
+                    <span class="article-date"></span>
+                    <span class="article-source"></span>
+                </div>
+                <div class="article-actions">
+                    <button class="save-button">Save Offline</button>
+                    <button class="share-button">Share</button>
+                </div>
+            </div>
+        </article>
+    </template>
+
+    <script src="app.js" type="module"></script>
+</body>
+</html> 
