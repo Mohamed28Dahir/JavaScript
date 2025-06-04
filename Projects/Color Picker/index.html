@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Color Picker Tool</h1>
+        <div class="color-picker-wrapper">
+            <div class="color-preview" id="colorPreview"></div>
+            <input type="color" id="colorPicker" value="#4287f5">
+            <div class="hex-code">
+                <span>Hex Code:</span>
+                <input type="text" id="hexValue" readonly>
+            </div>
+            <div class="options">
+                <label class="toggle">
+                    <input type="checkbox" id="backgroundToggle">
+                    <span class="toggle-label">Update Background</span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
